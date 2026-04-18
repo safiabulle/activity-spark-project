@@ -9,7 +9,7 @@ A web application that helps users find random activity suggestions to combat bo
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [Features](#features)
-- [Technologies](#Technologies Used)
+- [Technologies](#technologies-Used)
 - [Datasource](#data-source)
 - [browser support](#browser-support)
 - [License](#license)
