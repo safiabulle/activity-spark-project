@@ -117,3 +117,39 @@ if (document.getElementById('filter-btn')) {
         }
     });
 }
+
+if (document.getElementById('favorites-list')) {
+    const list = document.getElementById('favorites-list');
+    const noFavs = document.getElementById('no-favorites');
+    const favs = JSON.parse(localStorage.getItem('favActivities')) || [];
+    
+    if (favs.length > 0) {
+        noFavs.style.display = 'none';
+        favs.forEach(activity => {
+            const item = document.createElement('div');
+            item.className = 'favorite-item';
+            item.innerText = activity;
+            const removeBtn = document.createElement('button');
+            removeBtn.innerText = 'Remove';
+            removeBtn.className = 'btn-remove';
+            removeBtn.onclick = () => {
+                const index = favs.indexOf(activity);
+                if (index > -1) {
+                    favs.splice(index, 1);
+                    localStorage.setItem('favActivities', JSON.stringify(favs));
+                    item.remove();
+                    if (favs.length === 0) {
+                        noFavs.style.display = 'block';
+                    }
+                }
+            };
+            item.appendChild(removeBtn);
+            list.appendChild(item);
+        });
+    }
+}
+
+// Export for Testing
+if (typeof module !== 'undefined') {
+    module.exports = { getActivity };
+}
