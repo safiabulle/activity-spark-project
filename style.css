@@ -15,6 +15,11 @@
 
 body {
     font-family: 'Lato', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
@@ -58,16 +63,12 @@ nav {
     border-bottom: 2px solid var(--accent);
 }
 
-body {
-    background-color: var(--bg);
-    color: var(--text);
-}
-
 .container {
     max-width: 800px;
     margin: 50px auto;
     padding: 20px;
     text-align: center;
+    flex: 1;
 }
 
 h1 {
@@ -116,4 +117,12 @@ h1 {
     .nav-links { margin-top: 15px; }
     .actions { display: flex; flex-direction: column; gap: 10px; }
     .btn-secondary { margin-left: 0; }
+}
+
+footer {
+    background: var(--primary);
+    color: white;
+    padding: 35px 20px;
+    margin-top: auto;
+    text-align: center;
 }
