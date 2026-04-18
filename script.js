@@ -65,4 +65,15 @@ async function getActivity(type = "") {
             { activity: "Go stargazing", type: "recreational", participants: 1, price: 0 },
             { activity: "Try a new hobby", type: "recreational", participants: 1, price: 0.2 }
         ];
-    
+        
+       if (type) {
+            const filtered = mockActivities.filter(a => a.type === type);
+            return filtered.length > 0 ? filtered[Math.floor(Math.random() * filtered.length)] : mockActivities[Math.floor(Math.random() * mockActivities.length)];
+        } else {
+            return mockActivities[Math.floor(Math.random() * mockActivities.length)];
+        }
+    } catch (error) {
+        console.error("Fetch failed", error);
+        return null;
+    }
+}
