@@ -58,3 +58,55 @@ nav {
     border-bottom: 2px solid var(--accent);
 }
 
+body {
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    margin: 2rem 0;
+    min-height: 150px;
+}
+
+.btn-primary, .btn-secondary {
+    font-family: 'Courier New', Courier, monospace;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: transform 0.2s;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-secondary {
+    background: var(--accent);
+    color: var(--primary);
+    margin-left: 10px;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+}
