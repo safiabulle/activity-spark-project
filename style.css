@@ -110,3 +110,10 @@ h1 {
 .btn-primary:hover {
     transform: scale(1.05);
 }
+
+@media (max-width: 600px) {
+    nav { flex-direction: column; }
+    .nav-links { margin-top: 15px; }
+    .actions { display: flex; flex-direction: column; gap: 10px; }
+    .btn-secondary { margin-left: 0; }
+}

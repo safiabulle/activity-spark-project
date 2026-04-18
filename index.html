@@ -3,29 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Activity Spark | Home</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
       <nav>
-        <div class="logo">Activity Spark</div>
+        <div class="logo">Activity <span>Spark</span></div>
         <ul>
             <li><a href="index.html">Home</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="favorites.html">Favorites</a></li>
         </ul>
     </nav>
 
-    <section>
+    <section class="container hero">
         <h1>Boredom Ends Here</h1>
         <p>Get a random activity suggestion instantly.</p>
 
-        <div>
-            <h2>Ready?</h2>
-            <p>Type: ---</p>
+        <div id="activity-card" class="card">
+            <h2 id="activity-display">Ready?</h2>
+            <p id="activity-type">Type: ---</p>
         </div>
 
-        <button>I'm Bored</button>
-        <button>Save Activity</button>
+
+ <div class="actions">
+            <button id="get-activity" class="btn-primary">I'm Bored</button>
+            <button id="save-activity" class="btn-secondary">Save Activity</button>
+        </div>
     </section>
-    
+
+    <script src="script.js"></script>
+
 </body>
 </html>
