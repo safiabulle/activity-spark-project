@@ -65,7 +65,7 @@ async function getActivity(type = "") {
             { activity: "Go stargazing", type: "recreational", participants: 1, price: 0 },
             { activity: "Try a new hobby", type: "recreational", participants: 1, price: 0.2 }
         ];
-        
+
        if (type) {
             const filtered = mockActivities.filter(a => a.type === type);
             return filtered.length > 0 ? filtered[Math.floor(Math.random() * filtered.length)] : mockActivities[Math.floor(Math.random() * mockActivities.length)];
@@ -76,4 +76,44 @@ async function getActivity(type = "") {
         console.error("Fetch failed", error);
         return null;
     }
+}
+if (document.getElementById('get-activity')) {
+    const display = document.getElementById('activity-display');
+    const typeLabel = document.getElementById('activity-type');
+
+    document.getElementById('get-activity').addEventListener('click', async () => {
+        const data = await getActivity();
+        if (data) {
+            display.innerText = data.activity;
+            typeLabel.innerText = `Type: ${data.type}`;
+            typeLabel.style.fontFamily = 'monospace';
+        } else {
+            display.innerText = "Error: Could not fetch activity.";
+            typeLabel.innerText = "";
+        }
+    });
+
+    document.getElementById('save-activity').addEventListener('click', () => {
+        const currentActivity = display.innerText;
+        if (currentActivity !== "Ready?" && currentActivity !== "Error: Could not fetch activity.") {
+            let favs = JSON.parse(localStorage.getItem('favActivities')) || [];
+            if(!favs.includes(currentActivity)) {
+                favs.push(currentActivity);
+                localStorage.setItem('favActivities', JSON.stringify(favs));
+                alert("Saved!");
+            }
+        }
+    });
+}
+
+if (document.getElementById('filter-btn')) {
+    document.getElementById('filter-btn').addEventListener('click', async () => {
+        const cat = document.getElementById('category-select').value;
+        const data = await getActivity(cat);
+        if (data) {
+            document.getElementById('filter-display').innerText = data.activity;
+        } else {
+            document.getElementById('filter-display').innerText = "Error: Could not fetch activity. Please check your internet connection.";
+        }
+    });
 }
