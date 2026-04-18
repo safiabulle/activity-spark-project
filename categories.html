@@ -3,35 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Activity Spark | Categories</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <nav>
-        <div>Activity Spark</div>
-        <ul>
+        <div class="logo">Activity <span>Spark</span></div>
+        <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="categories.html">Categories</a></li>
+            <li><a href="categories.html" class="active">Categories</a></li>
+            <li><a href="favorites.html">Favorites</a></li>
         </ul>
     </nav>
 
-    <section>
+    <section class="container">
         <h1>Filter by Interest</h1>
 
-        <select>
-            <option>Education</option>
-            <option>Social</option>
-            <option>Recreational</option>
-            <option>DIY</option>
-            <option>Charity</option>
-            <option>Cooking</option>
+        <select id="category-select">
+            <option value="education">Education</option>
+            <option value="social">Social</option>
+            <option value="recreational">Recreational</option>
+            <option value="diy">DIY</option>
+            <option value="charity">Charity</option>
+            <option value="cooking">Cooking</option>
         </select>
 
-        <button>Find Activity</button>
+        <button id="filter-btn" class="btn-primary">Find Activity</button>
 
-        <div>
-            <h2>Select a category...</h2>
+        <div id="filter-result" class="card">
+            <h2 id="filter-display">Select a category...</h2>
         </div>
+
     </section>
-    
+    <script src="script.js"></script>
 </body>
 </html>

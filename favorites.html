@@ -4,25 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
    <nav>
-        <div>Activity Spark</div>
-        <ul>
+        <div class="logo">Activity <span>Spark</span> </div>
+        <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="categories.html">Categories</a></li>
-            <li><a href="favorites.html">Favorites</a></li>
+            <li><a href="favorites.html"  class="active">Favorites</a></li>
         </ul>
     </nav>
 
-    <section>
-        <h1>Favorites</h1>
+    <section class="container">
+        <h1>Your Favorite Activities</h1>
 
-        <div>
-            <p>No favorites yet. Save activities from Home page.</p>
+        <div  id="favorites-list" class="card">
+            <p id="no-favorites">No favorites yet. Save activities from Home page.</p>
         </div>
 
     </section>
+    <script src="script.js"></script>
 
 </body>
 </html>
