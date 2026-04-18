@@ -24,6 +24,9 @@ body {
 
 h1 {
     font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 1rem;
+    color: var(--primary);
 }
 
 nav {
@@ -69,12 +72,6 @@ nav {
     padding: 20px;
     text-align: center;
     flex: 1;
-}
-
-h1 {
-    font-family: 'Montserrat', sans-serif;
-    margin-bottom: 1rem;
-    color: var(--primary);
 }
 
 .card {

@@ -77,7 +77,7 @@ async function getActivity(type = "") {
         return null;
     }
 }
-if (document.getElementById('get-activity')) {
+if (typeof document !== "undefined" && document.getElementById('get-activity')) {
     const display = document.getElementById('activity-display');
     const typeLabel = document.getElementById('activity-type');
 
@@ -106,7 +106,7 @@ if (document.getElementById('get-activity')) {
     });
 }
 
-if (document.getElementById('filter-btn')) {
+if (typeof document !== "undefined" && document.getElementById('filter-btn')) {
     document.getElementById('filter-btn').addEventListener('click', async () => {
         const cat = document.getElementById('category-select').value;
         const data = await getActivity(cat);
@@ -118,7 +118,7 @@ if (document.getElementById('filter-btn')) {
     });
 }
 
-if (document.getElementById('favorites-list')) {
+if (typeof document !== "undefined" && document.getElementById('favorites-list')) {
     const list = document.getElementById('favorites-list');
     const noFavs = document.getElementById('no-favorites');
     const favs = JSON.parse(localStorage.getItem('favActivities')) || [];
